@@ -14,12 +14,14 @@ app.get('/', (req, res)=> {
 });
 
 app.get("/repositorios/:id", async (req, res) => {
+  try {
     const userId = req.params.id;
     const response = await axios(`https://api.github.com/users/${userId}`);
   
     const repos = await axios(response.data.repos_url);
   
     return res.send(response.data);
+  } catch(error) {}
   });
 
   app.get("/pokemons", async (req, res) => {
