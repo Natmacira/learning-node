@@ -1,27 +1,10 @@
 const express = require("express");
-const axios = require("axios");
+
 const router = express.Router();
+const {getPokemons} = require ("../controlls/pokemons")
 
 
-  router.get("/", async (req, res) => {
-    
-    const pokemons = await axios(`https://pokeapi.co/api/v2/pokemon/`);
-      
-    const arrayPokemons =  pokemons.data.results;
-
-    const nombresPokemons  = []
-
-    for (let i = 0; i < arrayPokemons.length; i++) {
-
-        nombresPokemons.push(arrayPokemons[i].name);
-        
-    }
-
-    return res.send(nombresPokemons);
-
-  });
-
-
+  router.get("/", getPokemons); 
 
 
 

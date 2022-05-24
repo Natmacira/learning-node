@@ -1,12 +1,9 @@
 const express = require("express");
 const router = express.Router();
+const {getAsanas} = require ("../controlls/asanas")
 
 const asanas = ["vriksana", "parvatasana", "setubandasana", "shavasana"];
 
-router.get('/', (req, res)=> {
-    res.send('Hola, mundo, acá probando el nodemon!! probando run dev....y vienen las asanas:  ' +  asanas);
-    console.log(asanas);
- 
-});
+router.get("/", getAsanas);
 
 module.exports = router;
