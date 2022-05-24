@@ -20,4 +20,4 @@ app.use("/repositorios", repositoriosRoutes);
 app.use("/pokemons", pokemonsRoutes);
 app.use("/blastoise", blastoiseRoutes);
 
-app.listen(PORT, () => console.log("Ejecutando aplicación ..."));
+app.listen(PORT, () => console.log("Ejecutando esta maravillosa aplicación ..."));
